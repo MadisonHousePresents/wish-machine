@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  participant_requirement: MyString
+  ef_fulfillment: MyString
+  approved: false
+
+two:
+  participant_requirement: MyString
+  ef_fulfillment: MyString
+  approved: false

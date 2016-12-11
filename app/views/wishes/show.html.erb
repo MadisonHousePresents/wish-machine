@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Participant requirement:</strong>
+  <%= @wish.participant_requirement %>
+</p>
+
+<p>
+  <strong>Ef fulfillment:</strong>
+  <%= @wish.ef_fulfillment %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @wish.approved %>
+</p>
+
+<%= link_to 'Edit', edit_wish_path(@wish) %> |
+<%= link_to 'Back', wishes_path %>
