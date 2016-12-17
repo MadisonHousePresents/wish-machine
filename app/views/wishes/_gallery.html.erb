@@ -1,21 +1,23 @@
-<h1>Wish Gallery</h1>
+<div class="Container">
+  <h1>Wish Gallery</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Participant requirement</th>
-      <th>Ef fulfillment</th>
-      <th>Approved</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% wishes.each do |wish| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= wish.participant_requirement %></td>
-        <td><%= wish.ef_fulfillment %></td>
-        <td><%= wish.approved %></td>
+        <th>Participant requirement</th>
+        <th>Ef fulfillment</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% if wishes %>
+        <% wishes.each do |wish| %>
+          <tr>
+            <td><%= wish.participant_requirement %></td>
+            <td><%= wish.ef_fulfillment %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

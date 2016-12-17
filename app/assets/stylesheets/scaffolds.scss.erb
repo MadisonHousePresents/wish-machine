@@ -52,6 +52,11 @@ a, .Button {
   @include transition(all 0.3s ease);
 }
 
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+}
+
 .Header {
   display: flex;
   flex-direction: column;
@@ -76,4 +81,15 @@ a, .Button {
   border-bottom: 1px solid $lime-border;
   font-weight: 700;
   font-size: 2em;
+}
+
+.Container {
+  margin: 0em 6em;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+    margin: 1em;
+  }
 }

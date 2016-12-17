@@ -26,17 +26,6 @@ input {
   font-size: 12px;
 }
 
-.Form {
-	margin: 0em 6em;
-	display: flex;
-	flex-direction: column;
-
-	h1 {
-		text-align: center;
-		margin: 1em;
-	}
-}
-
 .Form-contactFieldsLabel {
 	font-size: 0.7em;
 }
@@ -44,6 +33,10 @@ input {
 .Form-contactFields {
 	display: flex;
 	margin: 0.5em 0em 1em;
+
+	.field_with_errors {
+		width: 100%;
+	}
 
 	.Input-text {
 		margin-right: 2em;
@@ -119,4 +112,8 @@ input {
 	font-size: 1em;
 	padding: 0.5em;
 	margin: 0em 0em 1em;
+}
+
+#Form-errorWrapper {
+	font-size: 0.6em;
 }

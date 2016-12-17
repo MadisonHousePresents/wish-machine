@@ -11,13 +11,15 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
+
+    if @user.save
+      redirect_to root_path
+      flash[:success] = "Your wish has been submitted."
+    else
+      respond_to do |format|
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+        flash[:error] = "Your wish has not been submitted, all fields are required."
       end
     end
   end
@@ -37,8 +39,7 @@ class UsersController < ApplicationController
         :terms_accepted,
         wish_attributes: [
           :participant_requirement,
-          :ef_fulfillment,
-          :approved
+          :ef_fulfillment
         ],
         wish: params[:user][:wish].try(:keys)
       )

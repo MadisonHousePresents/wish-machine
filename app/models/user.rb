@@ -15,4 +15,8 @@ class User < ApplicationRecord
   validates :terms_accepted,
             acceptance:true
 
+  before_create do
+    self.wish.approved = false
+  end
+
 end
