@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<h1>Make A Wish</h1>
 
-<h1>Users</h1>
+<%= render 'form', user: @user %>
 
 <table>
   <thead>
@@ -18,16 +18,9 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.phone %></td>
-        <td><%= user.string %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= user.terms_accepted %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
