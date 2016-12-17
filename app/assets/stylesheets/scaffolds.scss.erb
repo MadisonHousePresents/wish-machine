@@ -1,0 +1,79 @@
+$black: #000000;
+$olive: #3D441E;
+$olive-hover: transparentize($olive, 0.2);
+$lime: #C5B200;
+$lime-border: transparentize($lime, 0.4);
+$white: #FFFFFF;
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #fff;
+  color: #191919;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  line-height: 2em;
+  margin: 0px;
+}
+
+h1 {
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+  font-size: 3em;
+  text-transform: uppercase;
+  color: $olive;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 0px;
+  color: $olive;
+  border-bottom: 1px dotted $white;
+
+  &:hover {
+    color: $olive-hover;
+    border-bottom-color: $olive-hover;
+  }
+}
+
+a, .Button {
+  @include transition(all 0.3s ease);
+}
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(<%= asset_path 'bg_texture.jpg' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3em;
+}
+
+.Header-logo {
+  width: 175px;
+}
+
+.Header-title {
+  position: relative;
+  margin: 0.75em 0em 0em;
+  padding: 0.5em 0em 0.25em 0em;
+  color: $lime;
+  border-top: 1px solid $lime-border;
+  border-bottom: 1px solid $lime-border;
+  font-weight: 700;
+  font-size: 2em;
+}

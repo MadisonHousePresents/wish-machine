@@ -3,8 +3,105 @@ $olive: #3D441E;
 $lime: #C5B200;
 $white: #FFFFFF;
 
-.Button-submitWish {
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 
+@mixin center-horizontally {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+form {
+	font-size: 2em;
+	font-weight: 400;
+}
+
+input {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+.Form {
+	margin: 0em 6em;
+	display: flex;
+	flex-direction: column;
+
+	h1 {
+		text-align: center;
+		margin: 1em;
+	}
+}
+
+.Form-contactFieldsLabel {
+	font-size: 0.7em;
+}
+
+.Form-contactFields {
+	display: flex;
+	margin: 0.5em 0em 1em;
+
+	.Input-text {
+		margin-right: 2em;
+		font-size: 0.6em;
+		padding: 0.5em;
+	}
+
+	.Input-text:last-child {
+		margin-right: 0em;
+	}
+}
+
+.Form-agreementField {
+	@include center-horizontally;
+
+}
+
+.Form-agreementLabel {
+	font-size: 0.7em;
+	margin-left: 0.4em;
+}
+
+.Form-actions {
+	@include center-horizontally;
+	margin: 1em 0em;
+}
+
+.Button {
+	@include border-radius(3px);
+
+	font-size: 0.75em;
+	text-transform: uppercase;
+	font-weight: 700;
+  border: 0px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.Button-submitWish {
+	background: $olive;
+	color: $white;
+
+	&:hover {
+		background: transparentize($olive, 0.2);
+		color: transparentize($white, 0.2);
+	}
+}
+
+.Button-learnMore {
+	background: $lime;
+	color: $olive;
+	margin-left: 1em;
+
+	&:hover {
+		background: transparentize($lime, 0.2);
+		color: transparentize($olive, 0.2);
+		border-bottom: 0px;
+	}
 }
 
 .Input-checkbox {
@@ -18,5 +115,8 @@ $white: #FFFFFF;
 }
 
 .Input-text--large {
-	font-size: 18px
+	width: calc(100% - 1em);
+	font-size: 1em;
+	padding: 0.5em;
+	margin: 0em 0em 1em;
 }

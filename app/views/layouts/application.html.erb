@@ -4,12 +4,17 @@
     <title>Electric Forest Wish Machine</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Crimson+Text:600,700|Open+Sans:400,700' %>
+
   </head>
 
   <body>
   	<div class="Header">
+  		<%= image_tag 'logo.png', class: "Header-logo" %>
+  		<h1 class="Header-title">Wish Machine</h1>
   	</div>
     <%= yield %>
   </body>

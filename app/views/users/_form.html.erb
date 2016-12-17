@@ -1,41 +1,49 @@
-<h1>Make A Wish</h1>
+<div class="Form-wrapper">
+  <div class="Form">
+    <h1>Make A Wish</h1>
 
-<%= form_for(setup_user(user)) do |user_form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <%= form_for(setup_user(user)) do |user_form| %>
+      <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <%= user_form.fields_for :wish do |wish_form| %>
-    <%= label_tag :participant_requirement, "If I..." %>
-    <%= wish_form.text_field :participant_requirement, class: "Input-text Input-text--large" %>
+      <%= user_form.fields_for :wish do |wish_form| %>
+        <%= label_tag :participant_requirement, "If I..." %>
+        <%= wish_form.text_field :participant_requirement, class: "Input-text Input-text--large" %>
 
-    <%= label_tag :ef_fulfillment, "then Electric Forest will..." %>
-    <%= wish_form.text_field :ef_fulfillment, class: "Input-text Input-text--large" %>
-  <% end %>
+        <%= label_tag :ef_fulfillment, "then Electric Forest will..." %>
+        <%= wish_form.text_field :ef_fulfillment, class: "Input-text Input-text--large" %>
+      <% end %>
 
-  <div>If I win, this is how Electric Forest can contact me:</div>
+      <div class="Form-contactFieldsLabel">If I win, this is how Electric Forest can contact me:</div>
 
-  <div class="u-displayFlex">
-      <%= user_form.text_field :name, placeholder: "legal name", class: "Input-text" %>
-      <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
-      <%= user_form.text_field :email, placeholder: "email address", class: "Input-text" %>
+      <div class="Form-contactFields">
+          <%= user_form.text_field :name, placeholder: "legal name", class: "Input-text" %>
+          <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
+          <%= user_form.text_field :email, placeholder: "email address", class: "Input-text" %>
+      </div>
+
+      <div class="Form-agreementField">
+        <%= user_form.check_box :terms_accepted, class: "Input-checkbox" %>
+        <label class="Form-agreementLabel" for="terms_accepted">
+          I agree to the <a href="">Terms &amp; Conditions</a> of the <a href="">Official Contest Rules</a>.
+        </label>
+      </div>
+
+
+      <div class="Form-actions">
+        <%= user_form.submit "Submit Wish", class: "Button Button-submitWish" %>
+        <a href="" class="Button Button-learnMore">Learn More</a>
+      </div>
+    <% end %>
+
   </div>
-
-  <div class="field">
-    <%= user_form.check_box :terms_accepted, class: "Input-checkbox" %>
-    <%= label_tag :terms_accepted, "I agree to the Terms & Conditions of the Official Contest Rules." %>
-  </div>
-
-
-  <div class="actions">
-    <%= user_form.submit "Submit Wish", class: "Button-submitWish" %>
-  </div>
-<% end %>
+</div>
