@@ -4,7 +4,7 @@ class WishesController < ApplicationController
   # GET /wishes
   # GET /wishes.json
   def index
-    @wishes = Wish.all
+    @wishes = Wish.where(approved: true)
   end
 
   # GET /wishes/1

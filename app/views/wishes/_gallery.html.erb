@@ -1,0 +1,21 @@
+<h1>Wish Gallery</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participant requirement</th>
+      <th>Ef fulfillment</th>
+      <th>Approved</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% wishes.each do |wish| %>
+      <tr>
+        <td><%= wish.participant_requirement %></td>
+        <td><%= wish.ef_fulfillment %></td>
+        <td><%= wish.approved %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
