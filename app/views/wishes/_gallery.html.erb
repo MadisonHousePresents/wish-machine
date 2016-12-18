@@ -1,23 +1,18 @@
-<div class="Container">
+<div class="Container WishGallery-wrapper">
+  <%= image_tag 'accent.png', class: 'WishGallery-accent' %>
   <h1>Wish Gallery</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Participant requirement</th>
-        <th>Ef fulfillment</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% if wishes %>
-        <% wishes.each do |wish| %>
-          <tr>
-            <td><%= wish.participant_requirement %></td>
-            <td><%= wish.ef_fulfillment %></td>
-          </tr>
+  <div class="WishGallery">
+    <% if wishes %>
+      <% wishes.each_slice(3) do |wish_group| %>
+        <div class="WishGallery-wishColumn">
+        <% wish_group.each do |wish| %>
+          <div class="WishGallery-wish">
+            <strong>If I</strong> <%= wish.participant_requirement %>, <strong>then Electric Forest will</strong> <%= wish.ef_fulfillment %>.
+          </div>
         <% end %>
+        </div>
       <% end %>
-    </tbody>
-  </table>
+    <% end %>
+  </div>
 </div>

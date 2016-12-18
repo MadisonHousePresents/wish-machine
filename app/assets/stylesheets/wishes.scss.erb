@@ -1,0 +1,58 @@
+// Place all the styles related to the Wishes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$black: #000000;
+$olive: #3D441E;
+$lime: #C5B200;
+$lime-border: transparentize($lime, 0.4);
+$white: #FFFFFF;
+
+.WishGallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(<%= asset_path 'bg_texture.jpg' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3em 6em;
+  margin: 0px;
+
+  h1 {
+		color: $white;
+		margin: 0.4em 0em 1em
+  }
+}
+
+.WishGallery-accent {
+	margin-top: 1em;
+	max-width: 120px;
+}
+
+.WishGallery {
+	color: $white;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0px;
+}
+
+.WishGallery-wishColumn {
+	list-style: none;
+	width: calc(33% - 3em);
+	margin-right: 2em;
+}
+
+.WishGallery-wishColumn:last-child {
+	margin-right: 0;
+}
+
+.WishGallery-wish {
+	margin-bottom: 2em;
+	padding: 1.6em;
+	border: 1px solid $lime-border;
+	box-sizing: border-box;
+	font-size: 1.2em;
+  display: table;
+	text-align: center;
+}
