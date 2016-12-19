@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: mhp-wishmachine_production
-  username: mhp-wishmachine
+  database: mhp-ef-wish-machine_production
+  username: rails
   password: <%= ENV['MHP-WISHMACHINE_DATABASE_PASSWORD'] %>

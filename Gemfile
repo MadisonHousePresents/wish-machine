@@ -48,3 +48,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails_admin', '~> 1.0'
+
+group :production do
+  gem 'unicorn'
+  gem 'pg'
+end
