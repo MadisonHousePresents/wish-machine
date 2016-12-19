@@ -3,6 +3,8 @@ $olive: #3D441E;
 $lime: #C5B200;
 $white: #FFFFFF;
 
+$lime-border: transparentize($lime, 0.2);
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -36,15 +38,20 @@ input {
 
 	.field_with_errors {
 		width: 100%;
+	  font-family: 'Open Sans', sans-serif;
+	  font-size: 12px;
 	}
 
-	.Input-text {
+	.Input-text {		
+	  font-size: 12px;
+	}
+
+	.Input-text, .field_with_errors {
 		margin-right: 2em;
-		font-size: 0.6em;
 		padding: 0.5em;
 	}
 
-	.Input-text:last-child {
+	.Input-text:last-child, .field_with_errors:last-child {
 		margin-right: 0em;
 	}
 }
@@ -70,9 +77,9 @@ input {
 	font-size: 0.75em;
 	text-transform: uppercase;
 	font-weight: 700;
-  border: 0px;
   padding: 0.5em 1em;
   cursor: pointer;
+	border: 0px;
 }
 
 .Button-submitWish {
@@ -91,9 +98,9 @@ input {
 	margin-left: 1em;
 
 	&:hover {
-		background: transparentize($lime, 0.2);
+		background: $lime-border;
 		color: transparentize($olive, 0.2);
-		border-bottom: 0px;
+		border: 0px;
 	}
 }
 
@@ -114,6 +121,48 @@ input {
 	margin: 0em 0em 1em;
 }
 
-#Form-errorWrapper {
-	font-size: 0.6em;
+.alert {
+  padding: 15px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+	font-weight: 700;
+	font-size: 1.4em;
+	position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: $lime;
+  border-color: $lime-border;
+  color: $white;
+}
+
+.field_with_errors input {
+	border-color: $lime;
+}
+
+button.close {  
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+}
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+
+.close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
 }

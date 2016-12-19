@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+	root to: 'users#new'
+	get '/users', to: redirect('/')
+
   resources :wishes
   resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-	root to: 'users#new'
 end
