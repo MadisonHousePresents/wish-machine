@@ -2,19 +2,39 @@
   <%= image_tag 'accent.png', class: 'WishGallery-accent' %>
   <h1>Wish Gallery</h1>
 
-  <div class="WishGallery">
-    <% if wishes %>
-      <% wishes.each_slice(3) do |wish_group| %>
-        <div class="WishGallery-wishColumn">
-        <% wish_group.each do |wish| %>
-          <div class="WishGallery-wish">
-            <strong>If I</strong> <%= wish.participant_requirement %>, <strong>then Electric Forest will</strong> <%= wish.ef_fulfillment %>.
+  <% if wishes %>
+    <div id="WishGallery" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner" role="listbox">
+        <% wishes.each_slice(9).with_index do |wish_page, index| %>
+          <div class="<%= wish_page_class(index) %>">
+            <div class="WishGallery-page">
+              <% wish_page.each_slice( wish_page_slice_count(wish_page) ) do |wish_group| %>
+                <div class="WishGallery-wishColumn">
+                  <% wish_group.each do |wish| %>
+                    <div class="WishGallery-wish">
+                      <strong>If I</strong> <%= wish.participant_requirement %>, <strong>then Electric Forest will</strong> <%= wish.ef_fulfillment %>.
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
           </div>
         <% end %>
+      </div>
+
+      <% if wishes.count > 9 %>
+        <div class="WishGallery-pagination">
+          <span data-target="#WishGallery" data-slide="prev">&lsaquo; PREV</span>
+          <div class="carousel-indicators">
+            <% wishes.each_slice(9).with_index do |wish_page_num, index| %>
+              <span data-target="#WishGallery" data-slide-to="<%= index %>" class="<%= wish_pagination_class(index) %>"><%= index + 1 %> </span>
+            <% end %>
+          </div>
+          <span data-target="#WishGallery" data-slide="next" class="last">NEXT &rsaquo;</span>
         </div>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="Copyright">
     &copy; 2017 Electric Forest
