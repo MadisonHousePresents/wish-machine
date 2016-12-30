@@ -7,5 +7,5 @@ class Wish < ApplicationRecord
   validates :ef_fulfillment,
             presence: true
 
-  paginates_per 18
+  paginates_per 12
 end
