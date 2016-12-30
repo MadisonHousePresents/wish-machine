@@ -41,21 +41,48 @@ $white: #FFFFFF;
   display: flex;
 }
 
-.WishGallery-column {
+.WishGallery-column, .WishGallery-wish {
   width: 32%;
 }
 
+.WishGallery-gutter {
+  width: 2%;
+} 
+
 .WishGallery-wish {
-  margin-bottom: 24px;
-  width: 32%;
+  margin-bottom: 2%;
 	padding: 1.6em;
 	border: 1px solid $lime-border;
 	box-sizing: border-box;
 	font-size: 1.2em;
   display: table;
 	text-align: center;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .WishGallery-pagination {
   visibility: hidden;
+}
+
+
+@media all and (max-width: 940px) and (min-width: 769px) {
+  .WishGallery-column, .WishGallery-wish { width: 31%; }
+  .WishGallery-gutter { width: 3.5%; } 
+  .WishGallery-wish { margin-bottom: 3.5%; }
+}
+
+@media all and (max-width: 768px) and (min-width: 481px) {
+  .WishGallery-wrapper { padding: 2em 4em; } 
+  .WishGallery-column, .WishGallery-wish { width: 47%; }
+  .WishGallery-gutter { width: 3%; } 
+  .WishGallery-wish { margin-bottom: 3%; }
+}
+
+@media all and (max-width: 480px) {
+  .WishGallery-wrapper { padding: 2em; } 
+  .WishGallery-column, .WishGallery-wish { width: 100%; }
+  .WishGallery-gutter { width: 0; } 
+  .WishGallery-wish { margin-bottom: 8%; }
 }

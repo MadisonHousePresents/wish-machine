@@ -12,8 +12,8 @@ $(function() {
   var masonryOptions = {
     itemSelector: '.WishGallery-wish',
     columnWidth: '.WishGallery-column',
-    percentPosition: true,
-    gutter: 24
+    gutter: '.WishGallery-gutter',
+    percentPosition: true
   }
 
   $('.WishGallery-container').masonry(masonryOptions);
