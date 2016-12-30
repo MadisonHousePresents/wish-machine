@@ -3,16 +3,6 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(function() {
-  // var slide = function(alertItem) {
-  //   alertItem.slideDown(500, function(){
-  //     var next = $(this).next('.alert');
-  //     if (next)
-  //       slide(next);
-  //   });
-  // }
-
-  // slide($('.alert:first'));
-
   var i = 0;
   $(".alert").each( function() {
     $(this).delay(3800*i).slideUp(1200);
