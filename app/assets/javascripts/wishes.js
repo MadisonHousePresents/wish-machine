@@ -20,9 +20,6 @@ $(function() {
     loading: function() {
       return $(this).text('Loading next page...');
     },
-    success: function() {
-      return console.log("does this success callback ever get called?")
-    },
     error: function() {
       return $(this).text('There was an error, please try again');
     }

@@ -5,7 +5,7 @@ $(".WishGallery-container").append($newWishes)
 
 // Update pagination link
 <% if @wishes.last_page? %>
-  $('.WishGallery-pagination').html("");
+  $('.WishGallery-pagination').html("That's all folks!");
 <% else %>
   $('.WishGallery-pagination').html("<%=j link_to_next_page(@wishes, 'Next Page', :remote => true) %>");
 <% end %>
