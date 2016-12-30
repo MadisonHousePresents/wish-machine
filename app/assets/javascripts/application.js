@@ -16,3 +16,5 @@
 //= require_tree .
 //= require bootstrap
 //= require jquery
+//= require jquery.infinite-pages
+//= require masonry.pkgd.min

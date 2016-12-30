@@ -1,0 +1,11 @@
+// Append new data for infinite scrolling
+var $newWishes = $("<%=j render('wishes/gallery', wishes: @wishes) %>");
+$(".WishGallery-container").append($newWishes)
+	.masonry('appended', $newWishes);
+
+// Update pagination link
+<% if @wishes.last_page? %>
+  $('.WishGallery-pagination').html("");
+<% else %>
+  $('.WishGallery-pagination').html("<%=j link_to_next_page(@wishes, 'Next Page', :remote => true) %>");
+<% end %>

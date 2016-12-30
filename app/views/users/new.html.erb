@@ -1,2 +1,22 @@
 <%= render 'form', user: @user %>
-<%= render 'wishes/gallery', wishes: @wishes %>
+
+<div class="Container WishGallery-wrapper">
+  <%= image_tag 'accent.png', class: 'WishGallery-accent' %>
+  <h1>Wish Gallery</h1>
+
+  <% if @wishes %>
+    <div class="WishGallery">
+			<div class="WishGallery-container">
+		    <div class="WishGallery-column"></div>
+				<%= render 'wishes/gallery', wishes: @wishes %>
+			</div>
+      <div class="WishGallery-pagination">
+        <%= link_to_next_page(@wishes, 'Next Page', :remote => true) %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="Copyright">
+    &copy; 2017 Electric Forest
+  </div>
+</div>

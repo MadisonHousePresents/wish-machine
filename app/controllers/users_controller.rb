@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @wishes = Wish.where(approved: true).shuffle
+    @wishes = Wish.where(approved: true).page(params[:page])
   end
 
   # POST /users
