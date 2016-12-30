@@ -3,17 +3,17 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :wish
 
   validates :name,
-            presence: true
+            presence: { message: 'Must enter name.' }
 
   validates :phone,
-            presence: true
+            presence: { message: 'Must enter phone number.' }
 
   validates :email,
-            presence: true,
-            format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, message: "Must enter valid email" }
+            presence: { message: 'Must enter email.' },
+            format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, message: "Must enter valid email." }
 
   validates :terms_accepted,
-            acceptance:true
+            acceptance: {message: 'Must agree to the Terms & Conditions of the Official Contest Rules.'}
 
   before_create do
     self.wish.approved = false

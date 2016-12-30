@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @wishes = Wish.where(approved: true).page(params[:page])
 
     if @user.save
       redirect_to root_path
@@ -19,7 +20,6 @@ class UsersController < ApplicationController
       respond_to do |format|
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-        flash[:error] = "Your wish has not been submitted, all fields are required."
       end
     end
   end
