@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: mhp-ef-wish-machine_production
-  username: rails
+  username: mhp-wishmachine
   password: <%= ENV['MHP-WISHMACHINE_DATABASE_PASSWORD'] %>
