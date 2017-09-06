@@ -3,8 +3,7 @@ class CreateWishes < ActiveRecord::Migration[5.0]
     create_table :wishes do |t|
       t.string :participant_requirement
       t.string :ef_fulfillment
-      t.boolean :approved
-
+      t.boolean :approved, null: false, default: false
       t.timestamps
     end
   end

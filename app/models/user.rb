@@ -15,8 +15,4 @@ class User < ApplicationRecord
   validates :terms_accepted,
             acceptance: {message: 'Must agree to the Terms & Conditions of the Official Contest Rules.'}
 
-  before_create do
-    self.wish.approved = false
-  end
-
 end
