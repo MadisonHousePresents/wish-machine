@@ -161,14 +161,12 @@ button.close {
   font-size: 21px;
   font-weight: 700;
   line-height: 1;
-  color: #000;
+  color: $olive;
   text-shadow: 0 1px 0 #fff;
-  filter: alpha(opacity=20);
-  opacity: .2;
 }
 
 .close:hover {
-  color: #000;
+  color: transparentize($olive, 0.2);
   text-decoration: none;
   cursor: pointer;
   filter: alpha(opacity=50);
@@ -197,4 +195,107 @@ button.close {
   	font-size: 0.6em;
   	line-height: 1.2em;
   }
+}
+
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+  margin: 5em;
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: $white;
+  border: 1px solid $lime;
+  border-radius: 2;
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  background-clip: padding-box;
+  padding: 1em;
+  font-size: 1.2em;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0,0,0,.7);
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+	margin: 1em;
+}
+
+.modal-header h1 {
+  text-align: left !important;
+  font-size: 2.25em;
+  margin: 0em !important;
+}
+
+// Title text within header
+.modal-title {
+  margin: 0;
+  line-height: 1em;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  padding: 1em;
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
 }

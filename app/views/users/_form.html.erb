@@ -29,6 +29,10 @@
 
       <%= label_tag :ef_fulfillment, "then Electric Forest will..." %>
       <%= wish_form.text_field :ef_fulfillment, class: "Input-text Input-text--large" %>
+
+      <%= label_tag :wish_reason, "I would like to see my wish come true in The Forest because..." %>
+      <%= wish_form.text_field :wish_reason, class: "Input-text Input-text--large" %>
+
     <% end %>
 
     <div class="Form-contactFieldsLabel">If I win, this is how Electric Forest can contact me:</div>
@@ -42,7 +46,7 @@
     <div class="Form-agreementField">
       <%= user_form.check_box :terms_accepted, class: "Input-checkbox" %>
       <label class="Form-agreementLabel" for="terms_accepted">
-        I agree to the <a href="">Terms &amp; Conditions</a> of the <a href="">Official Contest Rules</a>.
+        I agree to the <a data-toggle="modal" data-target="#OfficialRules">Official Rules</a>, <a href="https://www.electricforestfestival.com/terms-and-conditions/" target="_blank">Terms of Use</a> and <a href="https://www.electricforestfestival.com/privacy-policy/" target="_blank">Privacy Policy</a>.
       </label>
     </div>
 
@@ -50,8 +54,51 @@
 
     <div class="Form-actions">
       <%= user_form.submit "Submit Wish", class: "Button Button-submitWish" %>
-      <a href="" class="Button Button-learnMore">Learn More</a>
+      <a data-toggle="modal" data-target="#OfficialRules" class="Button Button-learnMore">Learn More</a>
     </div>
   <% end %>
+
+  <div class="modal fade" id="OfficialRules" tabindex="-1" role="dialog" aria-labelledby="OfficialRules">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h1 class="modal-title" id="myModalLabel">Official Contest Rules</h1>
+        </div>
+        <div class="modal-body">
+          <p>The Electric Forest Wish Machine is an opportunity to earn your Forest dream. On this digital trading post, you can offer up a funny, outrageous, or charitable deed for your very own dream-come-true experience at Electric Forest.</p>
+
+          <p>Keep in mind - Forest HQ will only be able to grant a small number of wishes. Wish appearance on the submission page does not imply wish fulfillment, merely that a wish is in the running. All wishes that meet the rules will be displayed anonymously on the wish machine page.</p>
+
+          <p>For a wish to be in the running, you must comply with the following rules:</p>
+
+          <ol>
+            <li>The first half of your wish "If I ___________", must take place before Electric Forest 2017.</li>
+            <li>You must be able to document and record online, publicly, your fulfillment of the first half of your wish.</li>
+            <li>The second half of your wish "Then Electric Forest will ___________ " must be an action that takes place on site during an Electric Forest 2017 weekend.</li>
+            <li>Your wish cannot be dangerous to yourself or others.</li>
+            <li>Your wish must be sincere - you must actually be prepared to complete the first half and participate in the second half.</li>
+            <li>Participants are welcome to submit more than one wish. If the same wish is submitted more than once, the first wish will be given priority consideration.</li>
+            <li>You must agree to all of the <a href="https://www.electricforestfestival.com/terms-and-conditions/" target="_blank">Terms of Use</a>.</li>
+          </ol>
+
+          <p>Up to five (5) wishes will be selected by the Electric Forest Plug In Team based on the following criteria:</p>
+
+          <ul>
+            <li>50% Feasibility</li>
+            <li>30% Social Impact / Amusement / Outrageousness (dependent on wish theme)</li>
+            <li>10% Originality</li>
+            <li>10% Quality of the story</li>
+          </ul>
+
+          <h2>Timeline</h2>
+
+          <p>Wish submission will be open from January 15 to March 5, 2017. Wishes will be accepted for fulfillment in the later half of March 2017.</p>
+
+          <p>At any time, Forest HQ may follow up with you to clarify aspects of your wish and details for your deed before your wish is selected for fulfillment. For example, if you are seeking to perform on stage with an artist, HQ could follow up for documentation of your musical skill.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>

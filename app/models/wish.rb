@@ -7,5 +7,9 @@ class Wish < ApplicationRecord
   validates :ef_fulfillment,
             presence: { message: 'Must enter "then Electric Forest will..." portion of wish.' }
 
+  validates :wish_reason,
+            presence: { message: 'Must explain why you would like to see wish come true in The Forest.' },
+            length: { maximum: 350 }
+
   paginates_per 12
 end

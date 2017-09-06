@@ -39,7 +39,8 @@ class UsersController < ApplicationController
         :terms_accepted,
         wish_attributes: [
           :participant_requirement,
-          :ef_fulfillment
+          :ef_fulfillment,
+          :wish_reason
         ],
         wish: params[:user][:wish].try(:keys)
       )
