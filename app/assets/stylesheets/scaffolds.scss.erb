@@ -1,9 +1,11 @@
 $black: #000000;
-$olive: #3D441E;
-$olive-hover: transparentize($olive, 0.2);
-$lime: #C5B200;
-$lime-border: transparentize($lime, 0.4);
+$olive: #365217;
+$lime: #C6BA80;
 $white: #FFFFFF;
+
+$olive-hover: transparentize($olive, 0.2);
+$lime-border: transparentize($lime, 0.4);
+$gray: #222222;
 
 @mixin transition($args...) {
   -webkit-transition: $args;
@@ -28,8 +30,8 @@ body {
 }
 
 h1 {
-  font-family: 'Crimson Text', serif;
-  font-weight: 600;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
   font-size: 3em;
   text-transform: uppercase;
   color: $olive;
@@ -57,25 +59,26 @@ a, .Button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(<%= asset_path 'bg_texture.jpg' %>);
+  background-image: url(<%= asset_path 'bg_header.jpg' %>);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 3em;
+  background-position: center 40%;
+  padding: 2em;
 }
 
 .Header-logo {
-  width: 175px;
+  width: 275px;
 }
 
 .Header-title {
+  background-image: url(<%= asset_path 'WishMachine_Logo.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-indent: -10000px;
+  height: 320px;
+  width: 500px;
   position: relative;
-  margin: 0.75em 0em 0em;
-  padding: 0.5em 0em 0.25em 0em;
-  color: $lime;
-  border-top: 1px solid $lime-border;
-  border-bottom: 1px solid $lime-border;
-  font-weight: 700;
-  font-size: 2em;
+  margin-bottom: 3em;
 }
 
 .Container {
@@ -86,6 +89,7 @@ a, .Button {
   h1 {
     text-align: center;
     margin: 1em;
+    color: $gray;
   }
 }
 
@@ -97,8 +101,10 @@ a, .Button {
 
 @media all and (max-width: 768px) and (min-width: 481px) {
   .Container { margin: 0em 4em; }
+  .Header-title { max-height: 200px; max-width: 350px; margin-bottom: 1em;}
 }
 
 @media all and (max-width: 480px) {
   .Container { margin: 0em 2em; }
+  .Header-title { max-height: 160px; max-width: 280px; margin-bottom: 0em;}
 }

@@ -1,6 +1,6 @@
 $black: #000000;
-$olive: #3D441E;
-$lime: #C5B200;
+$olive: #365217;
+$lime: #C6BA80;
 $white: #FFFFFF;
 
 $lime-border: transparentize($lime, 0.2);
@@ -98,7 +98,7 @@ a.handOnHover {
 
 .Button-learnMore {
 	background: $lime;
-	color: $olive;
+	color: $black;
 	margin-left: 1em;
 
 	&:hover {
