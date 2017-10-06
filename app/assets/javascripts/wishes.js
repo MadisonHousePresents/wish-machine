@@ -3,11 +3,10 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(function() {
-  var i = 0;
-  $(".alert").each( function() {
-    $(this).delay(3800*i).slideUp(1200);
-    i++;
-  });
+
+  setTimeout(function() {
+    $('.alert').slideUp();
+  }, 3800);
 
   var masonryOptions = {
     itemSelector: '.WishGallery-wish',
