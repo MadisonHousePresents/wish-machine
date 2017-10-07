@@ -4,14 +4,14 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @wishes = Wish.where(approved: true).page(params[:page])
+    @wishes = Wish.where(approved: true).order('random()').page(params[:page])
   end
 
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @wishes = Wish.where(approved: true).page(params[:page])
+    @wishes = Wish.where(approved: true).order('random()').page(params[:page])
 
     if @user.save
       redirect_to root_path
