@@ -25,4 +25,13 @@ $(function() {
       return $(this).text('There was an error, please try again');
     }
   });
+
+  $(window).on('scroll', function() {
+      var cta = $("#Header-cta");
+      if ($(this).scrollTop() > 600) {
+          if (!cta.data('faded')) cta.data('faded', 1).stop(true).fadeTo(400, 0);
+      } else if (cta.data('faded')) {
+          cta.data('faded', 0).stop(true).fadeTo(400, 1);
+      }
+  });
 });
