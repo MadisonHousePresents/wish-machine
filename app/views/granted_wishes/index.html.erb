@@ -1,0 +1,31 @@
+<%= render 'granting_intro' %>
+
+<div class="Container WishGallery-wrapper">
+  <h1>Wish Gallery</h1>
+
+  <% if @granted_wishes %>
+    <div class="WishGallery">
+      <div class="WishGallery-container">
+        <div class="WishGallery-column"></div>
+        <div class="WishGallery-gutter"></div>
+
+        <% @granted_wishes.each do |granted_wish| %>
+          <div class="WishGallery-wish">
+            <p class="WishGallery-winner"><%= granted_wish.winner %></p>
+            <p><strong>If I...</strong> <%= granted_wish.requirement %>, <strong>then Electric Forest will...</strong> <%= granted_wish.fulfillment %>.</p>
+            <p><%= granted_wish.info %></p>
+
+          </div>
+        <% end %>
+
+      </div>
+      <div class="WishGallery-pagination">
+        <%= link_to_next_page(@granted_wishes, 'Next Page', :remote => true) %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="Copyright">
+    &copy; 2018 Electric Forest
+  </div>
+</div>

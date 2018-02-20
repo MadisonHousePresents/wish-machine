@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  winner: MyString
+  requirement: MyText
+  fulfillment: MyText
+  info: MyText
+
+two:
+  winner: MyString
+  requirement: MyText
+  fulfillment: MyText
+  info: MyText

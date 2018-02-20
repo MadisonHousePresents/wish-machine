@@ -1,0 +1,6 @@
+// Update pagination link
+<% if @granted_wishes.last_page? %>
+  $('.WishGallery-pagination').html("That's all folks!");
+<% else %>
+  $('.WishGallery-pagination').html("<%=j link_to_next_page(@granted_wishes, 'Next Page', :remote => true) %>");
+<% end %>

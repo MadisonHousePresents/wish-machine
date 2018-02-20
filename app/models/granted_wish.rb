@@ -1,0 +1,2 @@
+class GrantedWish < ApplicationRecord
+end
