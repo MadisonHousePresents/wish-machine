@@ -7,6 +7,7 @@ $olive: #365217;
 $lime: #C6BA80;
 $white: #FFFFFF;
 $lime-border: $lime;
+$lime-hover: transparentize($lime, 0.4);
 
 .WishGallery-wrapper {
   display: flex;
@@ -93,6 +94,24 @@ $lime-border: $lime;
   visibility: hidden;
 }
 
+.WishGallery-externalLink {
+  margin-bottom: 0em;
+}
+
+.WishGallery-externalLink a {
+  color: $lime;
+  font-size: 1.5em;
+  font-weight: 700;
+  border-bottom: 0;
+}
+
+.WishGallery-externalLink a:hover {
+  color: $lime-hover;
+}
+
+.WishGallery-externalLink a:after {
+  content:"\00a0 \203A";
+}
 
 @media all and (max-width: 940px) and (min-width: 769px) {
   .WishGallery-column, .WishGallery-wish { width: 31%; }
