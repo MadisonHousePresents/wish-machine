@@ -11,10 +11,31 @@
 
         <% @granted_wishes.each do |granted_wish| %>
           <div class="WishGallery-grantedWish">
-            <p class="WishGallery-winner"><%= granted_wish.winner %></p>
-            <p><strong>If I...</strong> <%= granted_wish.requirement %>, <strong>then Electric Forest will...</strong> <%= granted_wish.fulfillment %>.</p>
-            <p><%= granted_wish.info %></p>
+            <%= image_tag("wheel.png") %>
+            <p class="WishGallery-winner">
+              <svg height="9" width="6">
+                <line x1="0" y1="0" x2="6" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
+              </svg>
 
+              <svg height="9" width="24">
+                <line x1="0" y1="0" x2="24" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
+              </svg>
+
+              <span class="WishGallery-winnerName"><%= granted_wish.winner %>'s Wish</span>
+              
+              <svg height="9" width="24">
+                <line x1="0" y1="0" x2="24" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
+              </svg>
+              <svg height="9" width="6">
+                <line x1="0" y1="0" x2="6" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
+              </svg>
+            </p>
+            <p class="WishGallery-description">
+              <strong>If I...</strong> <%= granted_wish.requirement %>, <strong>then Electric Forest will...</strong> <%= granted_wish.fulfillment %>.
+            </p>
+            <p class="WishGallery-information">
+              <strong>Additional Info:</strong> <%= granted_wish.info %>
+            </p>
           </div>
         <% end %>
 
