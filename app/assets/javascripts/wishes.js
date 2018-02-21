@@ -8,14 +8,21 @@ $(function() {
     $('.alert').slideUp();
   }, 3800);
 
-  var masonryOptions = {
+  var masonryOptionsForWishGallery = {
     itemSelector: '.WishGallery-wish',
     columnWidth: '.WishGallery-column',
     gutter: '.WishGallery-gutter',
     percentPosition: true
   }
 
-  $('.WishGallery-container').masonry(masonryOptions);
+  var masonryOptionsForGrantedWishes = {
+    itemSelector: '.WishGallery-grantedWish',
+    columnWidth: '.WishGallery-column--half',
+    gutter: '.WishGallery-gutter',
+    percentPosition: true
+  }
+
+  $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
   
   $('.WishGallery').infinitePages({
     loading: function() {
