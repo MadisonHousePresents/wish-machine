@@ -80,13 +80,14 @@ $lime-border: $lime;
 @media all and (max-width: 768px) and (min-width: 481px) {
   .WishGallery-wrapper { padding: 2em 4em; } 
   .WishGallery-column, .WishGallery-wish { width: 47%; }
+  .WishGallery-column--half, .WishGallery-grantedWish { width: 100%; }
   .WishGallery-gutter { width: 3%; } 
   .WishGallery-wish { margin-bottom: 3%; }
 }
 
 @media all and (max-width: 480px) {
   .WishGallery-wrapper { padding: 2em; } 
-  .WishGallery-column, .WishGallery-wish { width: 100%; }
+  .WishGallery-column, .WishGallery-wish, .WishGallery-column--half, .WishGallery-grantedWish { width: 100%; }
   .WishGallery-gutter { width: 0; } 
   .WishGallery-wish { margin-bottom: 8%; }
 }
