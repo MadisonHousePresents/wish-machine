@@ -5,9 +5,13 @@
 
   <% if @granted_wishes %>
     <div class="WishGallery">
-      <div class="WishGallery-container">
+      <% if @granted_wishes.count > 1 %>
+        <div class="WishGallery-container">
         <div class="WishGallery-column--half"></div>
         <div class="WishGallery-gutter"></div>
+      <% else %>
+        <div class="WishGallery-tempContainer">
+      <% end %>
 
         <% @granted_wishes.each do |granted_wish| %>
           <div class="WishGallery-grantedWish">
