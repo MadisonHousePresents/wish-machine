@@ -31,13 +31,21 @@
               </svg>
             </p>
             <p class="WishGallery-description">
-              <strong>If I...</strong> <%= granted_wish.requirement %>, <strong>then Electric Forest will...</strong> <%= granted_wish.fulfillment %>.
+              <strong>If I...</strong> <%= granted_wish.requirement %>
             </p>
-            <p class="WishGallery-information">
-              <strong>Additional Info:</strong> <%= granted_wish.info %>
+            <p class="WishGallery-description">
+              <strong>then Electric Forest will...</strong> <%= granted_wish.fulfillment %>
             </p>
 
-            <p class="WishGallery-externalLink"><%= link_to("Learn More", granted_wish.external_link, target: "_blank") %></p>
+            <% unless granted_wish.info.empty? %>
+              <p class="WishGallery-information">
+                <strong>Additional Info:</strong> <%= granted_wish.info %>
+              </p>
+            <% end %>
+
+            <% unless granted_wish.external_link.empty? %>
+              <p class="WishGallery-externalLink"><%= link_to("Learn More", granted_wish.external_link, target: "_blank") %></p>
+            <% end %>
           </div>
         <% end %>
 
