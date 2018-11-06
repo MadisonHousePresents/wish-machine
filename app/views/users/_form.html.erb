@@ -1,61 +1,69 @@
 <div class="Container">
-  <h1>Make A Wish</h1>
+  <div class="Form-container">
+    <h1>Take action to get your wish granted. </h1>
+    <h1>Make an impact; create change; dream big.</h1>
 
-  <div class="alerts-wrapper">
-    <% flash.each do |key, value| %>
-      <div class="alert">
-        <%= value %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+    <p>What are you doing to change the world? What would you wish for in return? Fill out the Wish Machine form explaining your brilliant plan to make the world better, and the wish you'd like to see granted at Electric Forest.
+    </p>
+      
+
+    <div class="alerts-wrapper">
+      <% flash.each do |key, value| %>
+        <div class="alert">
+          <%= value %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+
+      <% @user.errors.each do |key, value| %>
+        <div class="alert">
+          <%= value %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    </div>
+
+    <%= form_for(setup_user(user)) do |user_form| %>
+      <div class="Form-inputFields">
+
+        <div class="Form-wishFields">
+          <%= user_form.fields_for :wish do |wish_form| %>
+            <%= wish_form.text_area :participant_requirement, class: "Input-text", placeholder: "If I..." %>
+
+            <%= wish_form.text_area :ef_fulfillment, class: "Input-text", placeholder: "then Electric Forest will..." %>
+          <% end %>
+        </div>
+
+        <div class="Form-contactFields">
+          <%= user_form.text_field :name, placeholder: "legal name", class: "Input-text" %>
+          <%= user_form.text_field :email, placeholder: "email address", class: "Input-text" %>
+          <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
+          <%= user_form.text_field :name, placeholder: "city", class: "Input-text" %>
+          <%= user_form.text_field :name, placeholder: "state", class: "Input-text" %>
+
+
+        </div>
+
+      </div>
+
+      <div class="Form-agreementField">
+        <%= user_form.check_box :terms_accepted, class: "Input-checkbox" %>
+        <label class="Form-agreementLabel" for="terms_accepted">
+          I agree to the <a class="handOnHover" data-toggle="modal" data-target="#OfficialRules">Official Rules</a>, <a href="https://www.electricforestfestival.com/terms-and-conditions/" target="_blank">Terms of Use</a> and <a href="https://www.electricforestfestival.com/privacy-policy/" target="_blank">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <%= hidden_field_tag 'approved', false %>
+
+      <div class="Form-actions">
+        <%= user_form.submit "Submit Wish", class: "Button Button-submitWish" %>
+        <a data-toggle="modal" data-target="#ContestRules" class="Button Button-learnMore">Learn More</a>
       </div>
     <% end %>
 
-    <% @user.errors.each do |key, value| %>
-      <div class="alert">
-        <%= value %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <% end %>
   </div>
-
-  <%= form_for(setup_user(user)) do |user_form| %>
-
-    <%= user_form.fields_for :wish do |wish_form| %>
-      <%= label_tag :participant_requirement, "If I..." %>
-      <%= wish_form.text_field :participant_requirement, class: "Input-text Input-text--large" %>
-
-      <%= label_tag :ef_fulfillment, "then Electric Forest will..." %>
-      <%= wish_form.text_field :ef_fulfillment, class: "Input-text Input-text--large" %>
-
-      <%= label_tag :wish_reason, "I would like to see my wish come true in The Forest because..." %>
-      <%= wish_form.text_field :wish_reason, class: "Input-text Input-text--large" %>
-
-    <% end %>
-
-    <div class="Form-contactFieldsLabel">If I win, this is how Electric Forest can contact me:</div>
-
-    <div class="Form-contactFields">
-        <%= user_form.text_field :name, placeholder: "legal name", class: "Input-text" %>
-        <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
-        <%= user_form.text_field :email, placeholder: "email address", class: "Input-text" %>
-    </div>
-
-    <div class="Form-agreementField">
-      <%= user_form.check_box :terms_accepted, class: "Input-checkbox" %>
-      <label class="Form-agreementLabel" for="terms_accepted">
-        I agree to the <a class="handOnHover" data-toggle="modal" data-target="#OfficialRules">Official Rules</a>, <a href="https://www.electricforestfestival.com/terms-and-conditions/" target="_blank">Terms of Use</a> and <a href="https://www.electricforestfestival.com/privacy-policy/" target="_blank">Privacy Policy</a>.
-      </label>
-    </div>
-
-    <%= hidden_field_tag 'approved', false %>
-
-    <div class="Form-actions">
-      <%= user_form.submit "Submit Wish", class: "Button Button-submitWish" %>
-      <a data-toggle="modal" data-target="#ContestRules" class="Button Button-learnMore">Learn More</a>
-    </div>
-  <% end %>
-
 </div>

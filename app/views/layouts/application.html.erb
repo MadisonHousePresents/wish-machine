@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400|Open+Sans:400,700' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Eczar:500,700|Roboto+Condensed:400|Open+Sans:300,400,400i,700' %>
 
     <%= favicon_link_tag %>
 
@@ -15,8 +15,21 @@
 
   <body>
     <div class="Header">
-      <h1 class="Header-title">Wish Machine</h1>
-      <a id="Header-cta" href="https://www.electricforestfestival.com/announcingwishmachine/" target="_blank">Visit ElectricForestFestival.com</a>
+      <div class="Header-lead">
+        <h1 class="Header-logo">Wish Machine</h1>
+        <h2 class="Header-title">
+          <span class="basic">The Wish Machine</span><br />
+          <span class="em">rewards the positive actions</span> <br />
+          of the Forest Family.
+        </h2>
+      </div>
+
+      <div class="Header-sublead">
+        <h3>What are <em>you</em> doing to <strong>change the world?</strong></h3>
+        <h3>What would you wish for in return?</h3>
+      </div>
+
+      <a id="Header-linkBack" href="https://www.electricforestfestival.com/announcingwishmachine/" target="_blank">Visit ElectricForestFestival.com</a>
     </div>
     <%= yield %>
 

@@ -1,8 +1,13 @@
 $black: #000000;
-$olive: #365217;
-$lime: #C6BA80;
 $white: #FFFFFF;
+$marigold: #CDB619;
+$brass: #AD9218;
+$rust: #756417;
+$antique: #594C11;
+$gold-dust: #C6BA80;
 
+$olive: #3D5532;
+$lime: #C6BA80;
 $lime-border: transparentize($lime, 0.2);
 
 @mixin border-radius($radius) {
@@ -18,93 +23,164 @@ $lime-border: transparentize($lime, 0.2);
 	justify-content: center;
 }
 
-form {
-	font-size: 2em;
-	font-weight: 400;
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
 }
 
-input {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+a {
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 0px;
+  color: $white;
+  border-bottom: 1px dotted $white;
+
+  &:hover {
+    color: $gold-dust;
+    border-bottom-color: $gold-dust;
+  }
+}
+
+a, .Button {
+  @include transition(all 0.3s ease);
 }
 
 a.handOnHover {
   cursor: pointer;
 }
 
-.Form-contactFieldsLabel {
-	font-size: 0.7em;
+input, textarea, select, button {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.Form-container {
+  background-color: $brass;
+  padding: 3em;
+  max-width: 800px;
+  align-self: center;
+  margin-top: -16em;
+  margin-bottom: 4em;
+  color: $white;
+
+  h1 {
+    color: $white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    line-height: 0em;
+    padding-bottom: 0.5em;
+  }
+
+  p {
+    font-size: 1.25em;
+  }
+}
+
+.Form-inputFields {
+  display: flex;
+}
+
+.Form-wishFields {
+  display: flex;
+  flex-direction: column;
+  width: calc(60% - 2em);
+  margin: 0em 1em 0em 0em;
+
+  .Input-text {
+    height: 8em;
+    width: calc(100% - 1.2em);
+  }
+
+  .Input-text:first-child {
+    border-bottom: 0;
+    margin-bottom: -1px;
+    @include border-radius(3px 3px 0px 0px);
+  }
+
+  .Input-text:last-child {
+    @include border-radius(0px 0px 3px 3px);
+  }
 }
 
 .Form-contactFields {
 	display: flex;
-	margin: 0.5em 0em 1em;
+  flex-direction: column;
+  width: 40%;
+  margin-left: 1em;
+  justify-content: space-between;
 
-	.field_with_errors {
-		width: 100%;
-	  font-family: 'Open Sans', sans-serif;
-	  font-size: 12px;
-	}
+  .Input-text {
+    margin-bottom: 1em;
+    width: calc(100% - 1.2em);
+  }
 
-	.Input-text {		
-	  font-size: 12px;
-	}
-
-	.Input-text, .field_with_errors {
-		margin-right: 2em;
-		padding: 0.5em;
-	}
-
-	.Input-text:last-child, .field_with_errors:last-child {
-		margin-right: 0em;
-	}
+  .Input-text:last-child {
+    margin-bottom: 0em;
+  }
 }
 
 .Form-agreementField {
 	@include center-horizontally;
-
+  margin-top: 1.5em;
 }
 
 .Form-agreementLabel {
-	font-size: 0.7em;
+	font-size: 1.2em;
 	margin-left: 0.4em;
 }
 
 .Form-actions {
 	@include center-horizontally;
-	margin: 1em 0em 3em;
+	margin: 1.5em 0em 0em;
 }
 
 .Button {
-	@include border-radius(3px);
-
-	font-size: 0.75em;
+  @include border-radius(3px);
+  border: 1px solid transparent;
+  font-size: 1.5em;
 	text-transform: uppercase;
 	font-weight: 700;
-  padding: 0.5em 1em;
+  padding: 0.6em 1em;;
+  color: $antique;
+  opacity: 0.9;
+  font-family: 'Open Sans', sans-serif;
   cursor: pointer;
-	border: 0px;
+
+  &:focus {
+    opacity: 1.0;
+    outline: $gold-dust auto 5px;
+  }
+
+  &:hover {
+    border: 1px solid transparent;
+  }
 }
 
 .Button-submitWish {
 	background: $olive;
 	color: $white;
+  font-weight: 700;
 
 	&:hover {
-		background: transparentize($olive, 0.2);
-		color: transparentize($white, 0.2);
+    background-color: saturate($olive, 0.2);
+    color: saturate($white, 0.2);
 	}
 }
 
 .Button-learnMore {
-	background: $lime;
-	color: $black;
+	background: transparent;
+	color: $white;
+  border: 1px solid $white;
 	margin-left: 1em;
 
 	&:hover {
-		background: $lime-border;
-		color: transparentize($olive, 0.2);
-		border: 0px;
+		background: transparent;
+		color: transparentize($white, 0.2);
+		border: 1px solid $gold-dust;
 	}
 }
 
@@ -113,16 +189,22 @@ a.handOnHover {
 }
 
 .Input-text {
-	border-width: 0px;
-	border-bottom: 1px solid $olive;
-	width: 100%;
-}
+  @include border-radius(3px);
+  border: 1px solid $rust;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.6em;
+  color: $antique;
+  opacity: 0.9;
 
-.Input-text--large {
-	width: calc(100% - 1em);
-	font-size: 1em;
-	padding: 0.5em;
-	margin: 0em 0em 1em;
+  &::placeholder {
+    color: $antique;    
+  }
+
+  &:focus {
+    opacity: 1.0;
+    outline: $gold-dust auto 5px;
+  }
 }
 
 .alerts-wrapper {

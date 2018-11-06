@@ -23,8 +23,8 @@ $(function() {
   }
 
 
-  // $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
-  $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
+  $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
+  // $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
   
   $('.WishGallery').infinitePages({
     loading: function() {
@@ -36,7 +36,7 @@ $(function() {
   });
 
   $(window).on('scroll', function() {
-      var cta = $("#Header-cta");
+      var cta = $("#Header-linkBack");
       if ($(this).scrollTop() > 600) {
           if (!cta.data('faded')) cta.data('faded', 1).stop(true).fadeTo(400, 0);
       } else if (cta.data('faded')) {
