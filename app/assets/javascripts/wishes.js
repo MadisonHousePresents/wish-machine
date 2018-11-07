@@ -53,11 +53,22 @@ $(function() {
     }
   });
 
+  $('#WishParticipantField').focusout(function() {
+    if ($('#WishParticipantField').val() == "If I ") {
+      $('#WishParticipantField').val("");
+    }
+  });
+
   $('#WishEFField').focus(function() {
     if ($('#WishEFField').val() == "") {
       $('#WishEFField').val("then Electric Forest will ");      
     }
   });
 
+  $('#WishEFField').focusout(function() {
+    if ($('#WishEFField').val() == "then Electric Forest will ") {
+      $('#WishEFField').val("");      
+    }
+  });
 
 });
