@@ -298,30 +298,6 @@ button.close {
   opacity: .5;
 }
 
-@media all and (max-width: 680px) {
-  .Form-contactFields {
-  	flex-direction: column;
-  }
-
-  .Form-contactFields .Input-text {
-  	width: auto;
-  }
-
-  .Form-contactFields .Input-text, .Form-contactFields .field_with_errors {
-  	margin-right: 0em;
-  	margin-bottom: 2em;
-  }
-
-  .Form-agreementField {
-  	align-items: flex-start; 	
-  }
-
-  .Form-agreementLabel {
-  	font-size: 0.6em;
-  	line-height: 1.2em;
-  }
-}
-
 //
 // Modals
 // --------------------------------------------------
