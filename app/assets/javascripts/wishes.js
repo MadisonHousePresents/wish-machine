@@ -5,8 +5,11 @@
 $(function() {
 
   setTimeout(function() {
-    $('.alert').slideUp();
+    $('.alert').each(function(index) {
+      $(this).delay(500*index).slideUp();
+    })
   }, 3800);
+
 
   var masonryOptionsForWishGallery = {
     itemSelector: '.WishGallery-wish',
@@ -43,4 +46,18 @@ $(function() {
           cta.data('faded', 0).stop(true).fadeTo(400, 1);
       }
   });
+
+  $('#WishParticipantField').focus(function() {
+    if ($('#WishParticipantField').val() == "") {
+      $('#WishParticipantField').val("If I ");
+    }
+  });
+
+  $('#WishEFField').focus(function() {
+    if ($('#WishEFField').val() == "") {
+      $('#WishEFField').val("then Electric Forest will ");      
+    }
+  });
+
+
 });

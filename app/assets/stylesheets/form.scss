@@ -5,6 +5,7 @@ $brass: #AD9218;
 $rust: #756417;
 $antique: #594C11;
 $gold-dust: #C6BA80;
+$red-alert: #BC1025;
 
 $olive: #3D5532;
 $lime: #C6BA80;
@@ -104,6 +105,28 @@ input, textarea, select, button {
   .Input-text:last-child {
     @include border-radius(0px 0px 3px 3px);
   }
+
+  .field_with_errors {
+    line-height: 0;    
+   
+    .Input-text {
+      border: 1.5px solid $red-alert;
+    }
+  }
+
+  .field_with_errors:first-child {
+    .Input-text {
+      @include border-radius(3px 3px 0px 0px);      
+    }
+  }
+
+  .field_with_errors:last-child {
+    .Input-text {
+      border-bottom: 1.5px solid $red-alert;
+      margin-bottom: -1.5px;
+      @include border-radius(0px 0px 3px 3px);
+    }
+  }
 }
 
 .Form-contactFields {
@@ -121,11 +144,35 @@ input, textarea, select, button {
   .Input-text:last-child {
     margin-bottom: 0em;
   }
+
+  .field_with_errors {
+    .Input-text {
+      border: 1.5px solid $red-alert;      
+    }
+  }
+
+  .field_with_errors:last-child {
+    .Input-text {
+      margin: 0em;
+    }
+  }
 }
 
 .Form-agreementField {
 	@include center-horizontally;
   margin-top: 1.5em;
+
+  .field_with_errors {
+    .Input-checkbox::before {
+      content: "*";
+      margin-left: -1em;
+      font-size: 1.5em;
+      position: relative;
+      top: -3px;
+      color: $red-alert;
+      font-weight: 700;
+    }
+  }
 }
 
 .Form-agreementLabel {
@@ -184,10 +231,6 @@ input, textarea, select, button {
 	}
 }
 
-.Input-checkbox {
-
-}
-
 .Input-text {
   @include border-radius(3px);
   border: 1px solid $rust;
@@ -219,19 +262,15 @@ input, textarea, select, button {
 
 .alert {
   padding: 15px;
-  border-bottom: 1px solid $olive;
+  border-bottom: 1px solid $gold-dust;
 	font-weight: 700;
 	font-size: 1.4em;
-  background-color: $lime;
+  background-color: $antique;
   color: $white;
 }
 
 .alert:last-child {
 	border-bottom: 0px;
-}
-
-.field_with_errors input {
-	border-color: $lime;
 }
 
 button.close {  
@@ -247,7 +286,7 @@ button.close {
   font-size: 21px;
   font-weight: 700;
   line-height: 1;
-  color: $olive;
+  color: $gold-dust;
   text-shadow: 0 1px 0 #fff;
 }
 

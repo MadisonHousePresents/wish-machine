@@ -32,9 +32,9 @@
 
         <div class="Form-wishFields">
           <%= user_form.fields_for :wish do |wish_form| %>
-            <%= wish_form.text_area :participant_requirement, class: "Input-text", placeholder: "If I..." %>
+            <%= wish_form.text_area :participant_requirement, class: "Input-text", placeholder: "If I... ", id: "WishParticipantField" %>
 
-            <%= wish_form.text_area :ef_fulfillment, class: "Input-text", placeholder: "then Electric Forest will..." %>
+            <%= wish_form.text_area :ef_fulfillment, class: "Input-text", placeholder: "then Electric Forest will... ", id: "WishEFField" %>
           <% end %>
         </div>
 
@@ -42,8 +42,8 @@
           <%= user_form.text_field :name, placeholder: "legal name", class: "Input-text" %>
           <%= user_form.text_field :email, placeholder: "email address", class: "Input-text" %>
           <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
-          <%= user_form.text_field :name, placeholder: "city", class: "Input-text" %>
-          <%= user_form.text_field :name, placeholder: "state", class: "Input-text" %>
+          <%= user_form.text_field :city, placeholder: "city", class: "Input-text" %>
+          <%= user_form.text_field :state, placeholder: "state", class: "Input-text" %>
 
 
         </div>

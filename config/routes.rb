@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 	# root to: 'granted_wishes#index'
 
 	root to: 'users#new'
-	# get '/users', to: redirect('/')
+	get '/users', to: redirect('/')
 
   resources :wishes
   resources :users
