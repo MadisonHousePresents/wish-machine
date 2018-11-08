@@ -400,3 +400,15 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
+
+.modal-body {
+  em {
+    text-decoration: underline;
+    font-style: normal;
+  }
+
+  em.actual {
+    text-decoration: none;
+    font-style: italic;
+  }
+}
