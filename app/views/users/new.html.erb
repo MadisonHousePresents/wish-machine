@@ -1,7 +1,7 @@
 <%= render 'form', user: @user %>
 
 <div class="Container WishGallery-wrapper">
-  <h1>Wish Gallery</h1>
+  <h1 class="WishGallery-title">Wish Gallery</h1>
 
   <% if @wishes %>
     <div class="WishGallery">
@@ -17,7 +17,9 @@
   <% end %>
 
   <div class="Copyright">
-    &copy; 2018 Electric Forest
+    <%= image_tag 'EF-WM-icon-black.png' %>
+    <br />
+    &copy; 2019 Electric Forest
   </div>
 </div>
 

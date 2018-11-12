@@ -5,8 +5,11 @@
 $(function() {
 
   setTimeout(function() {
-    $('.alert').slideUp();
+    $('.alert').each(function(index) {
+      $(this).delay(500*index).slideUp();
+    })
   }, 3800);
+
 
   var masonryOptionsForWishGallery = {
     itemSelector: '.WishGallery-wish',
@@ -23,8 +26,8 @@ $(function() {
   }
 
 
-  // $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
-  $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
+  $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
+  // $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
   
   $('.WishGallery').infinitePages({
     loading: function() {
@@ -36,11 +39,36 @@ $(function() {
   });
 
   $(window).on('scroll', function() {
-      var cta = $("#Header-cta");
+      var cta = $("#Header-linkBack");
       if ($(this).scrollTop() > 600) {
           if (!cta.data('faded')) cta.data('faded', 1).stop(true).fadeTo(400, 0);
       } else if (cta.data('faded')) {
           cta.data('faded', 0).stop(true).fadeTo(400, 1);
       }
   });
+
+  $('#WishParticipantField').focus(function() {
+    if ($('#WishParticipantField').val() == "") {
+      $('#WishParticipantField').val("If I ");
+    }
+  });
+
+  $('#WishParticipantField').focusout(function() {
+    if ($('#WishParticipantField').val() == "If I ") {
+      $('#WishParticipantField').val("");
+    }
+  });
+
+  $('#WishEFField').focus(function() {
+    if ($('#WishEFField').val() == "") {
+      $('#WishEFField').val("then Electric Forest will ");      
+    }
+  });
+
+  $('#WishEFField').focusout(function() {
+    if ($('#WishEFField').val() == "then Electric Forest will ") {
+      $('#WishEFField').val("");      
+    }
+  });
+
 });

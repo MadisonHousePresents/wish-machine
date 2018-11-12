@@ -36,11 +36,12 @@ class UsersController < ApplicationController
         :name,
         :phone,
         :email,
+        :city,
+        :state,
         :terms_accepted,
         wish_attributes: [
           :participant_requirement,
-          :ef_fulfillment,
-          :wish_reason
+          :ef_fulfillment
         ],
         wish: params[:user][:wish].try(:keys)
       )

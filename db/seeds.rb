@@ -9,157 +9,171 @@
 
 users = User.create([
 	{
-		"name": "test",
-		"phone": "test",
-		"email": "test@test.com",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "donate $1000 to the Electronic Frontier Foundation",
 			"ef_fulfillment": "Let me propose to my girlfriend on stage during flume",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "test",
-		"phone": "test",
-		"email": "test@test.com",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "memorize 30 poems about trees",
 			"ef_fulfillment": "let me be a forest character performer",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Darcy",
-		"phone": "3035189805",
-		"email": "darcyraeschneider@gmail.com",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "learn to walk again by May 1st",
 			"ef_fulfillment": "give me a free good life wristband for the second weekend",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "test",
-		"phone": "test",
-		"email": "test@test.com",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "raise $5000 for my local elementary school",
 			"ef_fulfillment": "add my band to the lineup",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Test",
-		"phone": "Test",
-		"email": "Test@test.test",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "donate $1000 to the world wildlife fund in the name of the Forest Family",
 			"ef_fulfillment": "Let me have one of the sold out first weekend maplewoods tickets",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Test",
-		"phone": "Test",
-		"email": "test@test.com",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "run a marathon",
 			"ef_fulfillment": "let me meet BANKS",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "test",
-		"phone": "test",
-		"email": "test@test.test",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "hold a handstand for 5 minutes",
 			"ef_fulfillment": "let me teach a yoga class",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "test",
-		"phone": "test",
-		"email": "test@test.test",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "lose 25 lbs by June 1",
 			"ef_fulfillment": "send me on a shopping spree with clothing vendors",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "test",
-		"phone": "test",
-		"email": "test@test.com",
+		"name": "Lia Test Wisher",
+		"phone": "123-456-7890",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "volunteer 20 hours at an animal shelter",
 			"ef_fulfillment": "give me a free ticket to the second weekend",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Jane Vora",
+		"name": "Lia Test Wisher",
 		"phone": "123-456-7890",
-		"email": "jane.vora@gmail.com",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "dress up with all of my friends and flash mob a subway train",
 			"ef_fulfillment": "give us a group camp spot close to the festival entrance",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Jane Vora",
+		"name": "Lia Test Wisher",
 		"phone": "123-456-7890",
-		"email": "jane.vora@gmail.com",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "give away 200 forest care packages to forest family members",
 			"ef_fulfillment": "let me host my own mini event in the forest",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Jane Vora",
+		"name": "Lia Test Wisher",
 		"phone": "123-456-7890",
-		"email": "jane.vora@gmail.com",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "go clean up the beach next to my house and pick up every piece of trash",
 			"ef_fulfillment": "let me play a song on stage with Cheese",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Jonathan Proctor",
+		"name": "Lia Test Wisher",
 		"phone": "123-456-7890",
-		"email": "jproctordidntwanthisrealemaileventhothisjustatestsite@gmail.com",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "die my hair olive and lime in Electric Forest colors and shave #HappyForest into the side of my head",
 			"ef_fulfillment": "let me go on stage with Above \u0026 Beyond for their performance",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}, {
-		"name": "Jane Vora",
+		"name": "Lia Test Wisher",
 		"phone": "123-456-7890",
-		"email": "jane.vora@gmail.com",
+		"email": "lia@madisonhousepresents.com",
 		"terms_accepted": true,
+		"city": "Boulder",
+		"state": "Colorado",
 		"wish_attributes": {
 			"participant_requirement": "wear a tutu everyday until EF and post it on Instagram tagged #HappyForestTutu",
 			"ef_fulfillment": "give me tickets to both weekends",
-			"wish_reason": "I love EF",
 			"approved": true
 		}
 	}

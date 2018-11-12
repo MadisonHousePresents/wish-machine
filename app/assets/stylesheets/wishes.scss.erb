@@ -1,22 +1,24 @@
-// Place all the styles related to the Wishes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 $black: #000000;
-$olive: #365217;
-$lime: #C6BA80;
 $white: #FFFFFF;
-$lime-border: $lime;
-$lime-hover: transparentize($lime, 0.4);
+$marigold: #CDB619;
+$brass: #AD9218;
+$rust: #756417;
+$antique: #594C11;
+$gold-dust: #C6BA80;
+$olive: #3D5532;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 
 .WishGallery-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(<%= asset_path 'bg_texture2.jpg' %>);
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 3em 6em 3em;
   margin: 0px;
 
@@ -24,6 +26,18 @@ $lime-hover: transparentize($lime, 0.4);
 		color: $white;
 		margin: 0.4em 0em 1em
   }
+}
+
+.WishGallery-title {
+  background-image: url(<%= asset_path 'wish-gallery-title.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-indent: -10000px;
+  height: 196px;
+  width: 464px;
+  position: relative;
+  margin-bottom: 3em;
+
 }
 
 .WishGallery-accent {
@@ -36,10 +50,14 @@ $lime-hover: transparentize($lime, 0.4);
 }
 
 .WishGallery-container, .WishGallery-tempContainer {
-	color: $white;
+	color: #484848;
 	padding: 0px;
 	width: 100%;
   display: flex;
+
+  strong {
+    color: $olive;
+  }
 }
 
 .WishGallery-tempContainer {
@@ -59,16 +77,26 @@ $lime-hover: transparentize($lime, 0.4);
 } 
 
 .WishGallery-wish, .WishGallery-grantedWish {
+  background-image: url(<%= asset_path 'wish-flourish.png' %>);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 50% 1em;
+
+  @include border-radius(3px);
+  padding: 3.2em 1.5em 1em;
   margin-bottom: 2%;
-	padding: 1.6em;
-	border: 1px solid $lime-border;
-	box-sizing: border-box;
-	font-size: 1.2em;
+  border: 1px solid $gold-dust;
+  box-sizing: border-box;
+  font-size: 1.2em;
   display: table;
-	text-align: center;
+  text-align: center;
 /*  word-break: break-all;
   word-break: break-word;
   hyphens: auto;*/
+}
+
+.WishGallery-wish:after {
+  content: url(<%= asset_path 'wish-accent-border.png' %>);
 }
 
 .WishGallery-grantedWish {
@@ -103,14 +131,14 @@ $lime-hover: transparentize($lime, 0.4);
 }
 
 .WishGallery-externalLink a {
-  color: $lime;
+  color: $marigold;
   font-size: 1.5em;
   font-weight: 700;
   border-bottom: 0;
 }
 
 .WishGallery-externalLink a:hover {
-  color: $lime-hover;
+  color: $rust;
 }
 
 .WishGallery-externalLink a:after {
