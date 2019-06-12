@@ -1,13 +1,13 @@
 <%= render 'granting_intro' %>
 
 <div class="Container WishGallery-wrapper">
-  <h1>Granted Wishes</h1>
+  <h1 class="WishGallery-announcement-title">Official 2019 Wish Machine Granted Wishes</h1>
 
   <% if @granted_wishes %>
     <div class="WishGallery">
       <% if @granted_wishes.count > 1 %>
         <div class="WishGallery-container">
-        <div class="WishGallery-column--half"></div>
+        <div class="WishGallery-column"></div>
         <div class="WishGallery-gutter"></div>
       <% else %>
         <div class="WishGallery-tempContainer">
@@ -15,25 +15,13 @@
 
         <% @granted_wishes.each do |granted_wish| %>
           <div class="WishGallery-grantedWish">
-            <%= image_tag("wheel.png") %>
             <p class="WishGallery-winner">
-              <svg height="9" width="6">
-                <line x1="0" y1="0" x2="6" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
-              </svg>
-
-              <svg height="9" width="24">
-                <line x1="0" y1="0" x2="24" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
-              </svg>
-
-              <span class="WishGallery-winnerName"><%= granted_wish.winner %>'s Wish</span>
-              
-              <svg height="9" width="24">
-                <line x1="0" y1="0" x2="24" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
-              </svg>
-              <svg height="9" width="6">
-                <line x1="0" y1="0" x2="6" y2="0" style="stroke:rgb(190,186,128);stroke-width:4" />
-              </svg>
+              <% unless granted_wish.info.empty? %>
+                <%= granted_wish.info %> //
+              <% end %>
+              <%= granted_wish.winner %>
             </p>
+            <%= image_tag 'wish-flourish.png' %>
             <p class="WishGallery-description">
               <strong>If I...</strong> <%= granted_wish.requirement %>
             </p>
@@ -41,15 +29,10 @@
               <strong>then Electric Forest will...</strong> <%= granted_wish.fulfillment %>
             </p>
 
-            <% unless granted_wish.info.empty? %>
-              <p class="WishGallery-information">
-                <strong>Additional Info:</strong> <%= granted_wish.info %>
-              </p>
-            <% end %>
-
             <% unless granted_wish.external_link.empty? %>
               <p class="WishGallery-externalLink"><%= link_to("Learn More", granted_wish.external_link, target: "_blank") %></p>
             <% end %>
+
           </div>
         <% end %>
 
@@ -58,6 +41,7 @@
   <% end %>
 
   <div class="Copyright">
-    &copy; 2018 Electric Forest
+    <br />
+    &copy; 2019 Electric Forest
   </div>
 </div>

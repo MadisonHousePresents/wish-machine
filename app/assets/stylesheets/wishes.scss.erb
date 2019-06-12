@@ -23,8 +23,12 @@ $olive: #3D5532;
   margin: 0px;
 
   h1 {
-		color: $white;
-		margin: 0.4em 0em 1em
+		color: $rust;
+    font-weight: 700;
+    text-transform: uppercase; 
+    font-family: 'Roboto Condensed', sans-serif;
+		margin: 0.5em 0em 1.5em;
+    font-size: 2.5em;
   }
 }
 
@@ -37,7 +41,18 @@ $olive: #3D5532;
   width: 464px;
   position: relative;
   margin-bottom: 3em;
+}
 
+
+.WishGallery-announcement-title {
+  background-image: url(<%= asset_path 'wish-gallery-announcement-title.png' %>);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-indent: -10000px;
+  height: 202px;
+  width: 464px;
+  position: relative;
+  margin-bottom: 3em;
 }
 
 .WishGallery-accent {
@@ -64,11 +79,11 @@ $olive: #3D5532;
   justify-content: center;
 }
 
-.WishGallery-column, .WishGallery-wish {
+.WishGallery-column, .WishGallery-wish, .WishGallery-grantedWish {
   width: 32%;
 }
 
-.WishGallery-column--half, .WishGallery-grantedWish {
+.WishGallery-column--half {
   width: 48%;
 }
 
@@ -76,7 +91,23 @@ $olive: #3D5532;
   width: 2%;
 } 
 
-.WishGallery-wish, .WishGallery-grantedWish {
+.WishGallery-grantedWish {
+  background-image: url(<%= asset_path 'EF-WM-icon-rust--large.png' %>);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 50% 1.5em;
+
+  @include border-radius(3px);
+  padding: 7.5em 1.75em 1.25em;
+  margin-bottom: 2%;
+  border: 1px solid $gold-dust;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  display: table;
+  text-align: center;  
+}
+
+.WishGallery-wish {
   background-image: url(<%= asset_path 'wish-flourish.png' %>);
   background-repeat: no-repeat;
   background-size: auto;
@@ -95,21 +126,14 @@ $olive: #3D5532;
   hyphens: auto;*/
 }
 
-.WishGallery-wish:after {
+.WishGallery-wish:after, .WishGallery-grantedWish:after {
   content: url(<%= asset_path 'wish-accent-border.png' %>);
 }
 
-.WishGallery-grantedWish {
-  padding: 1.75em;
-}
-
 .WishGallery-winner {
-  font-size: 1.5em;
-  font-weight: 700;
-}
-
-.WishGallery-winnerName {
-  padding: 0em 0.5em;
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.3em;
 }
 
 .WishGallery-description {
@@ -131,8 +155,8 @@ $olive: #3D5532;
 }
 
 .WishGallery-externalLink a {
-  color: $marigold;
-  font-size: 1.5em;
+  color: $brass;
+  font-size: 1.25em;
   font-weight: 700;
   border-bottom: 0;
 }

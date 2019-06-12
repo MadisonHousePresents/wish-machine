@@ -20,14 +20,14 @@ $(function() {
 
   var masonryOptionsForGrantedWishes = {
     itemSelector: '.WishGallery-grantedWish',
-    columnWidth: '.WishGallery-column--half',
+    columnWidth: '.WishGallery-column',
     gutter: '.WishGallery-gutter',
     percentPosition: true
   }
 
 
-  $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
-  // $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
+  // $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
+  $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
   
   $('.WishGallery').infinitePages({
     loading: function() {
