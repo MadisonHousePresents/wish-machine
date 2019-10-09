@@ -44,10 +44,12 @@
           <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
           <%= user_form.text_field :city, placeholder: "city", class: "Input-text" %>
           <%= user_form.text_field :state, placeholder: "state", class: "Input-text" %>
-
-
+          <%= user_form.text_field :zip_code, placeholder: "zip code", class: "Input-text" %>
+          <%= user_form.check_box :local, class: "Input-checkbox" %>
+          <label class="Form-localLabel" for="local">
+            I'm a local.
+          </label>
         </div>
-
       </div>
 
       <div class="Form-agreementField">

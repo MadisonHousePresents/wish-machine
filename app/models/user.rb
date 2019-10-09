@@ -18,6 +18,9 @@ class User < ApplicationRecord
   validates :state,
             presence: { message: 'Must enter state.' }
 
+  validates :zip_cde,
+            presence: { message: 'Must enter zip code.' }
+
   validates :terms_accepted,
             acceptance: {message: 'Must agree to the Terms & Conditions of the Official Contest Rules.'}
 

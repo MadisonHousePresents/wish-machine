@@ -26,8 +26,8 @@ $(function() {
   }
 
 
-  // $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
-  $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
+  $('.WishGallery-container').masonry(masonryOptionsForWishGallery);
+  // $('.WishGallery-container').masonry(masonryOptionsForGrantedWishes);
   
   $('.WishGallery').infinitePages({
     loading: function() {

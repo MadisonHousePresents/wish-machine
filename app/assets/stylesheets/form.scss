@@ -62,7 +62,8 @@ input, textarea, select, button {
   padding: 3em;
   max-width: 800px;
   align-self: center;
-  margin-top: -26em;
+  margin-top: -16em;
+  // margin-top: -26em;
   margin-bottom: 4em;
   color: $white;
 
@@ -72,7 +73,8 @@ input, textarea, select, button {
     font-weight: 400;
     font-size: 2.5em;
     text-transform: uppercase;
-    line-height: 1em;
+    line-height: 0em;
+    // line-height: 1em;
     padding-bottom: 0.5em;
   }
 
