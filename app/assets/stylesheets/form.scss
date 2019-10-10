@@ -195,11 +195,13 @@ input, textarea, select, button {
   }
 }
 
-.Form-contactFields--sub {
+.Form-contactFields--sidebyside {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
 
+.Form-contactFields--thirds {
   .field_with_errors > * {
     width: 100% !important;
   }
@@ -210,7 +212,21 @@ input, textarea, select, button {
 
   *:last-child {
     width: calc(30% - 1.2em);
-  }  
+  }
+}
+
+.Form-contactFields--halfhalf {
+  .field_with_errors > * {
+    width: 100% !important;
+  }
+
+  *:first-child {
+    width: calc(40% - 1.2em);
+  }
+
+  *:last-child {
+    width: calc(60% - 1.2em);
+  }
 }
 
 .Form-agreementField {
@@ -230,6 +246,10 @@ input, textarea, select, button {
   }
 }
 
+.toggles {
+  margin-top: 0.5em;
+}
+
 .toggles [type="checkbox"] {
   position: absolute;
   top: auto;
@@ -241,10 +261,10 @@ input, textarea, select, button {
 }
 
 .toggles [type="checkbox"] + label {
-  display: block;
   position: relative;
+  margin-left: 1em;
   padding-bottom: 0.5em;
-  padding-left: 3.5em;
+  padding-left: 3em;
   max-width: calc(100% - 2em);
   font-size: 1.5em;
 }
@@ -332,12 +352,12 @@ input, textarea, select, button {
 
 .Button-submitWish {
 	background: lighten($brass, 15%);
-	color: $antique;
+	color: $bronze;
   font-weight: 700;
 
 	&:hover {
     background-color: lighten($brass, 5%);
-    color: darken($antique, 2%);
+    color: darken($bronze, 5%);
 	}
 }
 
