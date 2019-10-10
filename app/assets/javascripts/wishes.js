@@ -40,10 +40,10 @@ $(function() {
 
   $(window).on('scroll', function() {
       var cta = $("#Header-linkBack");
-      if ($(this).scrollTop() > 600) {
-          if (!cta.data('faded')) cta.data('faded', 1).stop(true).fadeTo(400, 0);
+      if ($(this).scrollTop() > 450) {
+          if (!cta.data('faded')) cta.data('faded', 1).stop(true).fadeTo(350, 0);
       } else if (cta.data('faded')) {
-          cta.data('faded', 0).stop(true).fadeTo(400, 1);
+          cta.data('faded', 0).stop(true).fadeTo(350, 1);
       }
   });
 
