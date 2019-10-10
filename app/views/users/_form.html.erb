@@ -3,7 +3,7 @@
     <h1>Take action to get your wish granted. </h1>
     <h1>Make an impact; create change; dream big.</h1>
 
-    <p>What are you doing to change the world? What would you wish for in return? Fill out the Wish Machine form explaining your brilliant plan to make the world better, and the wish you'd like to see granted at Electric Forest.
+    <p>Fill out the Wish Machine form explaining your brilliant plan to make the world better, and the wish you'd like to see granted at Electric Forest.
     </p>
       
 
@@ -42,11 +42,13 @@
           <%= user_form.text_field :name, placeholder: "legal name", class: "Input-text" %>
           <%= user_form.text_field :email, placeholder: "email address", class: "Input-text" %>
           <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
-          <%= user_form.text_field :city, placeholder: "city", class: "Input-text" %>
-          <%= user_form.text_field :state, placeholder: "state", class: "Input-text" %>
+          <div class="Form-contactFields--sub">
+            <%= user_form.text_field :city, placeholder: "city", class: "Input-text Input-text--medium" %>
+            <%= user_form.select :state, options_for_select(us_states), {},class: "Input-text Input-text--short Input-select" %>
+          </div>
           <%= user_form.text_field :zip_code, placeholder: "zip code", class: "Input-text" %>
           <%= user_form.check_box :local, class: "Input-checkbox" %>
-          <label class="Form-localLabel" for="local">
+          <label class="Form-label" for="local">
             I'm a local.
           </label>
         </div>
