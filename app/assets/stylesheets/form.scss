@@ -6,8 +6,10 @@ $rust: #756417;
 $antique: #594C11;
 $gold-dust: #C6BA80;
 $red-alert: #BC1025;
+$bronze: #655710;
 
 $olive: #3D5532;
+$dark-olive: #232F1D;
 $lime: #C6BA80;
 $lime-border: transparentize($lime, 0.2);
 
@@ -58,7 +60,7 @@ input, textarea, select, button {
 }
 
 .Form-container {
-  background-color: $brass;
+  background-color: $bronze;
   padding: 3em;
   max-width: 800px;
   align-self: center;
@@ -73,9 +75,9 @@ input, textarea, select, button {
     font-weight: 400;
     font-size: 2.5em;
     text-transform: uppercase;
-    line-height: 0em;
-    // line-height: 1em;
-    padding-bottom: 0.5em;
+    line-height: 1em;
+    padding-bottom: 0em;
+    margin: 0em;
   }
 
   p {
@@ -144,20 +146,13 @@ input, textarea, select, button {
     width: calc(100% - 1.2em);
   }
 
-  .Input-text--medium {
-    width: calc(80% - 1.2em);
-  }
-
-  .Input-text--short {
-    width: calc(20% - 1.2em);
-  }
-
   .Input-text:last-child {
     margin-bottom: 0em;
   }
 
   .Input-select {
     margin-bottom: 0.5em !important;
+    width: calc(100% - 1.2em);
     line-height: 1.9em;
     padding: 0.3em 0.5em;
     -webkit-appearance: none;
@@ -181,10 +176,38 @@ input, textarea, select, button {
   }
 }
 
+.Input-text {
+  @include border-radius(3px);
+  border: 1px solid $rust;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.6em;
+  color: $antique;
+  opacity: 0.9;
+
+  &::placeholder {
+    color: $antique;    
+  }
+
+  &:focus {
+    opacity: 1.0;
+    outline: $gold-dust auto 5px;
+  }
+}
+
 .Form-contactFields--sub {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+
+  *:first-child {
+    width: calc(72% - 1.2em);
+  }
+
+  *:last-child {
+    width: calc(30% - 1.2em);
+  }  
 }
 
 .Form-agreementField {
@@ -202,6 +225,74 @@ input, textarea, select, button {
       font-weight: 700;
     }
   }
+}
+
+.toggles [type="checkbox"] {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+.toggles [type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-bottom: 0.5em;
+  padding-left: 3.5em;
+  max-width: calc(100% - 2em);
+  font-size: 1.5em;
+}
+
+.toggles [type="checkbox"] + label::before,
+.toggles [type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  height: 1em;
+  transition: all 0.25s ease;
+}
+
+.toggles [type="checkbox"] + label::before {
+  left: 0;
+  top: 0.25em;
+  width: 2.5em;
+  border: 1px solid $antique;
+  background: darken($bronze, 10%);
+  border-radius: 1.1em;
+}
+
+.toggles [type="checkbox"] + label::after {
+  left: 0;
+  top: 0.1em;
+  background-color: $white;
+  background-position: center center;
+  border-radius: 50%;
+  width: 1em;
+  border: 0.25em solid $white;
+}
+
+.toggles [type="checkbox"]:checked + label::after {
+  left: 1.5em;
+  border-color: #407F12;
+  color: #407F12;
+  background-color: #407F12;
+}
+
+.toggles [type="checkbox"]:focus + label::after,
+.toggles [type="checkbox"]:hover + label::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='rgba(0,0,0,.25)'/%3E%3C/svg%3E");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.Form-contactFields--toggles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .Form-agreementLabel {
@@ -237,46 +328,28 @@ input, textarea, select, button {
 }
 
 .Button-submitWish {
-	background: $olive;
-	color: $white;
+	background: lighten($brass, 15%);
+	color: $antique;
   font-weight: 700;
 
 	&:hover {
-    background-color: saturate($olive, 0.2);
-    color: saturate($white, 0.2);
+    background-color: lighten($brass, 5%);
+    color: darken($antique, 2%);
 	}
 }
 
 .Button-learnMore {
-	background: transparent;
-	color: $white;
+	background: $white;
+	color: $antique;
   border: 1px solid $white;
 	margin-left: 1em;
-
-	&:hover {
-		background: transparent;
-		color: transparentize($white, 0.2);
-		border: 1px solid $gold-dust;
-	}
-}
-
-.Input-text {
-  @include border-radius(3px);
-  border: 1px solid $rust;
-  width: 100%;
-  font-size: 1.2em;
-  padding: 0.6em;
-  color: $antique;
   opacity: 0.9;
 
-  &::placeholder {
-    color: $antique;    
-  }
-
-  &:focus {
-    opacity: 1.0;
-    outline: $gold-dust auto 5px;
-  }
+	&:hover {
+		background: $gold-dust;
+		color: saturate($antique, 2%);
+		border: 1px solid $gold-dust;
+	}
 }
 
 .alerts-wrapper {

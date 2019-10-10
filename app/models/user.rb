@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :state,
             presence: { message: 'Must enter state.' }
 
-  validates :zip_cde,
+  validates :zip_code,
             presence: { message: 'Must enter zip code.' }
 
   validates :terms_accepted,
