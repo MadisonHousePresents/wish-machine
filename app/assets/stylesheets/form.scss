@@ -8,6 +8,7 @@ $gold-dust: #C6BA80;
 $red-alert: #BC1025;
 
 $olive: #3D5532;
+$dark-olive: #232F1D;
 $lime: #C6BA80;
 $lime-border: transparentize($lime, 0.2);
 
@@ -62,6 +63,7 @@ input, textarea, select, button {
   padding: 3em;
   max-width: 800px;
   align-self: center;
+  // margin-top: -16em;
   margin-top: -26em;
   margin-bottom: 4em;
   color: $white;
@@ -73,7 +75,8 @@ input, textarea, select, button {
     font-size: 2.5em;
     text-transform: uppercase;
     line-height: 1em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0em;
+    margin: 0em;
   }
 
   p {
@@ -138,12 +141,25 @@ input, textarea, select, button {
   justify-content: space-between;
 
   .Input-text {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     width: calc(100% - 1.2em);
   }
 
   .Input-text:last-child {
     margin-bottom: 0em;
+  }
+
+  .Input-select {
+    margin-bottom: 0.5em !important;
+    width: calc(100% - 1.2em);
+    line-height: 1.9em;
+    padding: 0.3em 0.5em;
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23756417%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E), linear-gradient(to bottom, #ffffff 0%,#f5f5f5 100%);
   }
 
   .field_with_errors {
@@ -156,6 +172,59 @@ input, textarea, select, button {
     .Input-text {
       margin: 0em;
     }
+  }
+}
+
+.Input-text {
+  @include border-radius(3px);
+  border: 1px solid $rust;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 0.6em;
+  color: $antique;
+  opacity: 0.9;
+
+  &::placeholder {
+    color: $antique;    
+  }
+
+  &:focus {
+    opacity: 1.0;
+    outline: $gold-dust auto 5px;
+  }
+}
+
+.Form-contactFields--sidebyside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Form-contactFields--thirds {
+  .field_with_errors > * {
+    width: 100% !important;
+  }
+
+  *:first-child {
+    width: calc(72% - 1.2em);
+  }
+
+  *:last-child {
+    width: calc(30% - 1.2em);
+  }
+}
+
+.Form-contactFields--halfhalf {
+  .field_with_errors > * {
+    width: 100% !important;
+  }
+
+  *:first-child {
+    width: calc(40% - 1.2em);
+  }
+
+  *:last-child {
+    width: calc(60% - 1.2em);
   }
 }
 
@@ -174,6 +243,78 @@ input, textarea, select, button {
       font-weight: 700;
     }
   }
+}
+
+.toggles {
+  margin-top: 0.5em;
+}
+
+.toggles [type="checkbox"] {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+.toggles [type="checkbox"] + label {
+  position: relative;
+  margin-left: 1em;
+  padding-bottom: 0.5em;
+  padding-left: 3em;
+  max-width: calc(100% - 2em);
+  font-size: 1.5em;
+}
+
+.toggles [type="checkbox"] + label::before,
+.toggles [type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  height: 1em;
+  transition: all 0.25s ease;
+}
+
+.toggles [type="checkbox"] + label::before {
+  left: 0;
+  top: 0.25em;
+  width: 2.5em;
+  border: 1px solid darken($brass, 10%);
+  background: darken($brass, 10%);
+  border-radius: 1.1em;
+}
+
+.toggles [type="checkbox"] + label::after {
+  left: 0;
+  top: 0.1em;
+  background-color: $white;
+  background-position: center center;
+  border-radius: 50%;
+  width: 1em;
+  border: 0.25em solid $white;
+}
+
+.toggles [type="checkbox"]:checked + label::after {
+  left: 1.1em;
+  border-color: saturate($olive, 50%);
+  color: saturate($olive, 50%);
+  background-color: saturate($olive, 50%);
+}
+
+.toggles [type="checkbox"]:focus + label::after,
+.toggles [type="checkbox"]:hover + label::after {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='50' fill='rgba(0,0,0,.25)'/%3E%3C/svg%3E");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.Form-contactFields--toggles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .Form-agreementLabel {
@@ -214,41 +355,23 @@ input, textarea, select, button {
   font-weight: 700;
 
 	&:hover {
-    background-color: saturate($olive, 0.2);
-    color: saturate($white, 0.2);
+    background-color: darken($olive, 5%);
+    color: darken($white, 5%);
 	}
 }
 
 .Button-learnMore {
-	background: transparent;
-	color: $white;
+	background: $white;
+	color: $antique;
   border: 1px solid $white;
 	margin-left: 1em;
-
-	&:hover {
-		background: transparent;
-		color: transparentize($white, 0.2);
-		border: 1px solid $gold-dust;
-	}
-}
-
-.Input-text {
-  @include border-radius(3px);
-  border: 1px solid $rust;
-  width: 100%;
-  font-size: 1.2em;
-  padding: 0.6em;
-  color: $antique;
   opacity: 0.9;
 
-  &::placeholder {
-    color: $antique;    
-  }
-
-  &:focus {
-    opacity: 1.0;
-    outline: $gold-dust auto 5px;
-  }
+	&:hover {
+		background: transparentize($white, 0.1);
+		color: lighten($antique, 10%);
+		border: 1px solid transparentize($white, 0.1);
+	}
 }
 
 .alerts-wrapper {

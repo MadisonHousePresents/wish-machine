@@ -38,6 +38,8 @@ class UsersController < ApplicationController
         :email,
         :city,
         :state,
+        :zip_code,
+        :local,
         :terms_accepted,
         wish_attributes: [
           :participant_requirement,

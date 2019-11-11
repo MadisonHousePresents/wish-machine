@@ -114,13 +114,14 @@ $olive: #3D5532;
   background-position: 50% 1em;
 
   @include border-radius(3px);
-  padding: 3.2em 1.5em 1em;
+  padding: 3.2em 2em 1em;
   margin-bottom: 2%;
   border: 1px solid $gold-dust;
   box-sizing: border-box;
   font-size: 1.2em;
   display: table;
   text-align: center;
+  overflow: hidden;
 /*  word-break: break-all;
   word-break: break-word;
   hyphens: auto;*/
@@ -167,6 +168,24 @@ $olive: #3D5532;
 
 .WishGallery-externalLink a:after {
   content:"\00a0 \203A";
+}
+
+.WishGallery-localBadge {
+  width: 200px;
+  background: $olive;
+  position: absolute;
+  text-align: center;
+  line-height: 2.25em;
+  letter-spacing: 1px;
+  color: $white;
+  bottom: 1.5em;
+  right: -5.75em;
+  top: auto;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  font-weight: bold;
+  font-size: 0.85em;
+  letter-spacing: 0px;
 }
 
 @media all and (max-width: 940px) and (min-width: 769px) {

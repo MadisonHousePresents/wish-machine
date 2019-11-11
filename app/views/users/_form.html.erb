@@ -3,7 +3,7 @@
     <h1>Take action to get your wish granted. </h1>
     <h1>Make an impact; create change; dream big.</h1>
 
-    <p>What are you doing to change the world? What would you wish for in return? Fill out the Wish Machine form explaining your brilliant plan to make the world better, and the wish you'd like to see granted at Electric Forest.
+    <p>Fill out the Wish Machine form explaining your brilliant plan to make the world better, and the wish you'd like to see granted at Electric Forest.
     </p>
       
 
@@ -42,17 +42,25 @@
           <%= user_form.text_field :name, placeholder: "legal name", class: "Input-text" %>
           <%= user_form.text_field :email, placeholder: "email address", class: "Input-text" %>
           <%= user_form.text_field :phone, placeholder: "phone number", class: "Input-text" %>
-          <%= user_form.text_field :city, placeholder: "city", class: "Input-text" %>
-          <%= user_form.text_field :state, placeholder: "state", class: "Input-text" %>
-
-
+          <div class="Form-contactFields--sidebyside Form-contactFields--thirds">
+            <%= user_form.text_field :city, placeholder: "city", class: "Input-text" %>
+            <%= user_form.select :state, options_for_select(us_states), {prompt: "state"},class: "Input-text Input-select" %>
+          </div>
+          <div class="Form-contactFields--sidebyside Form-contactFields--halfhalf">
+            <%= user_form.text_field :zip_code, placeholder: "zip code", class: "Input-text" %>
+            <div class="toggles">
+              <%= user_form.check_box :local, class: "Input-checkbox", id: "user[local]" %>
+              <label class="Form-label" for="user[local]">
+                I'm a local
+              </label>
+            </div>
+          </div>
         </div>
-
       </div>
 
       <div class="Form-agreementField">
         <%= user_form.check_box :terms_accepted, class: "Input-checkbox" %>
-        <label class="Form-agreementLabel" for="terms_accepted">
+        <label class="Form-agreementLabel" for="user_terms_accepted">
           I agree to the <a class="handOnHover" data-toggle="modal" data-target="#OfficialRules">Official Rules</a>, <a href="https://www.electricforestfestival.com/terms-and-conditions/" target="_blank">Terms of Use</a> and <a href="https://www.electricforestfestival.com/privacy-policy/" target="_blank">Privacy Policy</a>.
         </label>
       </div>
@@ -60,8 +68,8 @@
       <%= hidden_field_tag 'approved', false %>
 
       <div class="Form-actions">
-        <%= user_form.submit "Submit Wish", class: "Button Button-submitWish" %>
         <a data-toggle="modal" data-target="#ContestRules" class="Button Button-learnMore">Learn More</a>
+        <%= user_form.submit "Submit Wish", class: "Button Button-submitWish" %>
       </div>
     <% end %>
 

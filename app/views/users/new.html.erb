@@ -1,9 +1,10 @@
-<div class="Container">
+<%= render 'form', user: @user %>
+<!-- <div class="Container">
   <div class="Form-container">
     <h1>The Wish Machine has begun reviewing wishes!</h1>
-    <p> At this time no further wish submissions will be accepted for Electric Forest 2019. Keep an eye on your inbox, as HQ may reach out to learn more about your wish!</p>
+    <p> At this time no further wish submissions will be accepted for Electric Forest 2020. Keep an eye on your inbox, as HQ may reach out to learn more about your wish!</p>
   </div>
-</div>
+</div> -->
 
 <div class="Container WishGallery-wrapper">
   <h1 class="WishGallery-title">Wish Gallery</h1>
@@ -23,8 +24,9 @@
 
   <div class="Copyright">
     <%= image_tag 'EF-WM-icon-black.png' %>
-    <br />
-    &copy; 2019 Electric Forest
+    <p>
+      &copy; <%= Date.today.year %> <a href="https://electricforestfestival.com" target="_blank">Electric Forest</a>
+    </p>
   </div>
 </div>
 

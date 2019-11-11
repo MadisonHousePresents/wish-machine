@@ -1,5 +1,8 @@
 <% wishes.each do |wish| %>
   <div class="WishGallery-wish">
+    <% if wish.user.local %>
+      <div class="WishGallery-localBadge">I'm a local</div>
+    <% end %>
     <strong>If I</strong> <%= wish.participant_requirement.delete_prefix("If I") %>, <strong>then Electric Forest will</strong> <%= wish.ef_fulfillment.delete_prefix("then Electric Forest will") %>.
     <br />
   </div>
